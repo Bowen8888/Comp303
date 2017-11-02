@@ -8,7 +8,8 @@ import java.util.List;
 import javax.swing.Icon;
 
 /**
- * To be completed.
+ * 
+ * @author Bowen
  *
  */
 public class CompositeIcon implements Icon
