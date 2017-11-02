@@ -17,7 +17,10 @@ public class Assembly implements Part
 	
 	@Override
 	public void move(int x, int y) {
-		
+		for(Part part: aParts)
+		{
+			part.move(x, y);
+		}
 		
 	}
 
