@@ -108,7 +108,7 @@ class HandPanel extends JPanel
 		setBackground(CASINO_GREEN);
 		add(aLabel);
 		Icon icon = new CompositeIcon(SHIFT, CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack(), CardImages.getBack()); // TODO Correctly initialize a single icon that represents the back of 13 cards
-		// TODO 
+		
 		aLabel.setIcon(icon);
 	}
 	

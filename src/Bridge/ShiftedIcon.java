@@ -6,7 +6,9 @@ import java.awt.Graphics;
 import javax.swing.Icon;
 
 /**
- * To be completed.
+ * 
+ * @author Bowen
+ *
  */
 public class ShiftedIcon implements Icon
 {
