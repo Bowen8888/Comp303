@@ -1,6 +1,8 @@
 package Bridge;
 
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Stack;
 
 import Bridge.Card.Rank;
@@ -9,7 +11,7 @@ import Bridge.Card.Suit;
 /**
  * A deck of cards.
  */
-public class Deck
+public class Deck implements Cloneable, Iterable<Card>
 {
 	private Stack<Card> aCards;
 	
@@ -55,4 +57,44 @@ public class Deck
 		assert !isEmpty();
 		return aCards.pop();
 	}
+	@Override
+	public Deck clone()
+	{
+		try {
+			Deck clone = (Deck) super.clone();
+			clone.aCards = new Stack<Card>();
+			for(Card card: aCards)
+			{
+				clone.aCards.push(card.clone());
+			}
+			return clone;
+		} catch (CloneNotSupportedException e) {
+			return null;
+		}
+		
+		
+	}
+
+	public void clear()
+	{
+		aCards.clear();
+	}
+	
+	public void add(Card pCard)
+	{
+		aCards.push(pCard);
+	}
+
+	@Override
+	public Iterator<Card> iterator() {
+		return aCards.iterator();
+	}
+	
+	public void sort()
+	{
+		Collections.sort(aCards);;
+	}
+
+
+	
 }

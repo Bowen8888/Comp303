@@ -3,7 +3,7 @@ package PrototypeVsFactor;
 public class PrototypeTest {
 	private Item prototype = new Item("Test");
 	
-	public Item generaateNew()
+	public Item generateNew()
 	{
 		return prototype.clone();
 	}

@@ -3,7 +3,7 @@ package Bridge;
 /**
  * Same as version 7. My last example.
  */
-public class Card implements Cloneable
+public class Card implements Cloneable, Comparable<Card>
 {	
 	/**
  	 * A card's rank.
@@ -81,5 +81,22 @@ public class Card implements Cloneable
 	public String toString()
 	{
 		return aRank + " of " + aSuit;
+	}
+	@Override
+	public int compareTo(Card pCard) {
+		// TODO Auto-generated method stub
+		return this.getRank().ordinal() - pCard.getRank().ordinal();
+	}
+	
+	public Card clone()
+	{
+		try{
+			Card clone = (Card) super.clone();
+			return clone;
+		}
+		catch(CloneNotSupportedException e)
+		{
+			return null;
+		}
 	}
 }
