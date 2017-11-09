@@ -75,6 +75,10 @@ public class Inventory implements Iterable<Item>
 		}
 		amount += pQuantity;
 		aInventory.put(pItem, amount);
+		
+		notifyAdditionObserver(pItem);
+		
+		
 	}
 	
 	/**
@@ -90,6 +94,7 @@ public class Inventory implements Iterable<Item>
 		int amount = aInventory.get(pItem);
 		amount -= pQuantity;
 		aInventory.put(pItem, amount);
+		notifyRemovalObserver(pItem);
 	}
 	
 	/**
@@ -126,14 +131,12 @@ class PieChart implements AdditionObserver, RemovalObserver
 
 	@Override
 	public void itemRemoved(Item aItem) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(aItem + "removed from Piechart");
 	}
 
 	@Override
 	public void itemAdded(Item aItem) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(aItem + "added to Piechart");		
 	}
 	
 }
@@ -143,14 +146,12 @@ class ListView implements AdditionObserver, RemovalObserver
 
 	@Override
 	public void itemRemoved(Item aItem) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(aItem + "removed from ListView");		
 	}
 
 	@Override
 	public void itemAdded(Item aItem) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(aItem + "added to ListView");		
 	}
 	
 }
@@ -160,8 +161,7 @@ class TransactionLogger implements AdditionObserver
 
 	@Override
 	public void itemAdded(Item aItem) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(aItem + "added to TransactionLogger");				
 	}
 	
 }
