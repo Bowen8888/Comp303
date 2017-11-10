@@ -29,4 +29,10 @@ public class Employee
 	{
 		return aSalary;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return aName; 
+	}
 }

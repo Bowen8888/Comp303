@@ -8,10 +8,26 @@ public class Client {
 		
 		printSalary(bob);
 		printSalary(alice);
+		printCompensation(bob);
+		printCompensation(alice);
+		
+		doit(bob);
+		doit(alice);
+		
 	}
 	
 	private static void printSalary( Employee e)
 	{
-		System.out.println(e.getName() + ";" + e.getSalary());
+		System.out.println(e.getName() + " with Salary of" + e.getSalary());
+	}
+	
+	private static void printCompensation(Employee e)
+	{
+		System.out.println(e.getName() + " with Compensation of" + e.getCompensation());
+	}
+	
+	public static void doit(Employee e)
+	{
+		System.out.println(e.toString() + e.getCompensation());
 	}
 }
