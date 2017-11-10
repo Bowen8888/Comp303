@@ -15,6 +15,8 @@ public class Overloader {
 		new Overloader().redirector(foo);
 		new Overloader().redirector(12);
 		
+		
+		new Overloader(null);
 	}
 	
 	public void redirector(Object p){
@@ -46,7 +48,27 @@ public class Overloader {
 	{
 		return "Object";
 	}
-			
+	
+	public Overloader()
+	{
+		
+	}
+	
+	public Overloader(Object p)
+	{
+		System.out.println("Object");
+
+	}
+	
+	public Overloader(double[] p)
+	{
+		System.out.println("Double Array");
+	}
+	/*This causes the new Overloader(null); in main to be ambiguous.
+	public Overloader(int[] p)
+	{
+		System.out.println("Int Array");
+	}*/
 			
 }
 
