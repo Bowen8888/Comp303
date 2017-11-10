@@ -35,4 +35,9 @@ public class Employee
 	{
 		return aName; 
 	}
+	
+	public void setMentor(Employee e)
+	{
+		System.out.println("setMentor in Employee class");
+	}
 }

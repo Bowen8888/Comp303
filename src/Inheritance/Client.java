@@ -14,6 +14,14 @@ public class Client {
 		doit(bob);
 		doit(alice);
 		
+		Manager romeo = new Manager("Romeo", 1000, 200);
+		Manager neo = new Manager("Neo", 2500, 100);
+		
+		neo.setMentor(romeo);
+		Employee alsoRomeo = romeo;
+		
+		neo.setMentor(alsoRomeo);
+		
 	}
 	
 	private static void printSalary( Employee e)

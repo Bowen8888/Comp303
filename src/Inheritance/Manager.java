@@ -24,6 +24,10 @@ public class Manager extends Employee
 		return super.getCompensation() +aBonus;
 	}
 	
+	public void setMentor(Manager e)
+	{
+		System.out.println("setMentor in Manager class");
+	}
 	
 
 }
