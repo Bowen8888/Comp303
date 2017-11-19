@@ -29,5 +29,8 @@ public class Manager extends Employee
 		System.out.println("setMentor in Manager class");
 	}
 	
-
+	public static boolean isManager(Object pObject)
+	{
+		return pObject instanceof Manager;
+	}
 }

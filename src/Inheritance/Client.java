@@ -22,6 +22,11 @@ public class Client {
 		
 		neo.setMentor(alsoRomeo);
 		
+		Manager manager = (Manager) alice;
+		
+		System.out.println(Manager.isManager(alice));
+		System.out.println(Manager.isManager(manager));
+		
 	}
 	
 	private static void printSalary( Employee e)
