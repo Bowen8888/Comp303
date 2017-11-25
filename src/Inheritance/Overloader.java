@@ -39,6 +39,10 @@ public class Overloader {
 		return "Employee";
 	}
 	
+	public String doit(Manager p){
+		return "Manager";
+	}
+	
 	public String doit(String p)
 	{
 		return "String";

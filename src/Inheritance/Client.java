@@ -27,6 +27,12 @@ public class Client {
 		System.out.println(Manager.isManager(alice));
 		System.out.println(Manager.isManager(manager));
 		
+		System.out.println(romeo.getName());
+		
+		Manager alpha = new Manager(1000);
+		
+		System.out.println(alpha.getCompensation());//Salary is not initialized for alpha so only bonus is returned
+		
 	}
 	
 	private static void printSalary( Employee e)

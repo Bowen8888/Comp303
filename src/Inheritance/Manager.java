@@ -14,6 +14,11 @@ public class Manager extends Employee
 		aBonus = pBonus;
 	}
 	
+	public Manager(int pBonus)
+	{
+		aBonus = pBonus;
+	}
+	
 	public int getBonus()
 	{
 		return aBonus;
@@ -32,5 +37,10 @@ public class Manager extends Employee
 	public static boolean isManager(Object pObject)
 	{
 		return pObject instanceof Manager;
+	}
+	
+	public String getName()
+	{
+		return "Manager " + super.getName();
 	}
 }
