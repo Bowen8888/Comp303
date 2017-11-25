@@ -1,4 +1,4 @@
-package theater;
+package Theater;
 
 public interface Command 
 {

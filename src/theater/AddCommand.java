@@ -1,4 +1,4 @@
-package theater;
+package Theater;
 
 public class AddCommand implements Command
 {

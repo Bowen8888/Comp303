@@ -24,11 +24,11 @@ public class PrototypeTest {
 	}
 	public class Item implements Cloneable
 	{
-		private final String aString;
+		private final String aName;
 		
 		public Item (String pString)
 		{
-			aString = pString;
+			aName = pString;
 		}
 		@Override
 		public Item clone()
@@ -39,6 +39,11 @@ public class PrototypeTest {
 			} catch (CloneNotSupportedException e) {
 				return null;
 			}
+		}
+		
+		public String getName()
+		{
+			return aName;
 		}
 	}
 	

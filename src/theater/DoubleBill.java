@@ -1,4 +1,4 @@
-package theater;
+package Theater;
 
 import java.util.Arrays;
 import java.util.Iterator;
