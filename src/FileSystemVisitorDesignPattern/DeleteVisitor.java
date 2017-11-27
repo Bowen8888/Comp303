@@ -1,6 +1,6 @@
 package FileSystemVisitorDesignPattern;
 
-public class DeleteVisitor implements Visitor
+public class DeleteVisitor extends DefaultVisitor
 {
 	private String aQuery;
 	
@@ -23,11 +23,7 @@ public class DeleteVisitor implements Visitor
 		else
 		{
 			pDirectory.removeIFile(aQuery);
-			for(IFile file: pDirectory)
-			{
-					file.accept(this);
-				
-			}
+			super.visitDirectory(pDirectory);
 		}
 	}
 
@@ -40,12 +36,7 @@ public class DeleteVisitor implements Visitor
 		else
 		{
 			pSymLink.removeIFile(aQuery);
-			for(IFile file: pSymLink)
-			{
-				
-					file.accept(this);
-				
-			}
+			super.visitSymLink(pSymLink);
 		}
 		
 	}

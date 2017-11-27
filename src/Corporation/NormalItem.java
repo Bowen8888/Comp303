@@ -1,6 +1,6 @@
 package Corporation;
 
-public class NormalItem implements Item
+public class NormalItem extends AbstractItem
 {
 		private final String aName;
 		private final int aId;

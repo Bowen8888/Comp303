@@ -1,6 +1,6 @@
 package FileSystemVisitorDesignPattern;
 
-public class PrintVisitor implements Visitor
+public class PrintVisitor extends DefaultVisitor
 {
 
 	@Override
@@ -11,21 +11,14 @@ public class PrintVisitor implements Visitor
 	@Override
 	public void visitDirectory(Directory pDirectory) {
 		System.out.println(pDirectory.getName());
-		for(IFile pFile: pDirectory)
-		{
-			pFile.accept(this);
-		}
+		super.visitDirectory(pDirectory);
 		
 	}
 
 	@Override
 	public void visitSymLink(SymLink pSymLink) {
 		System.out.println(pSymLink.getName());
-		for(IFile pFile: pSymLink)
-		{
-			
-			pFile.accept(this);
-		}
+		super.visitSymLink(pSymLink);
 		
 	}
 
