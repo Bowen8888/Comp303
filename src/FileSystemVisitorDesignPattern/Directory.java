@@ -31,6 +31,29 @@ public class Directory extends AbstractFile
 	public void accept(Visitor pVisitor) {
 		pVisitor.visitDirectory(this);
 	}
-
+	
+	public void removeIFile(String pName)
+	{
+		IFile file = find(pName);
+		while( file!= null)
+		{
+			aFiles.remove(file);
+			file = find(pName);
+		}
+		
+	}
+	
+	private IFile find(String pName)
+	{
+		for(IFile file: aFiles)
+		{
+			if (file.getName().equals(pName))
+			{
+				return file;
+			}
+		}
+		
+		return null;
+	}
 	
 }

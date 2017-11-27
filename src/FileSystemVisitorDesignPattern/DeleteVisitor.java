@@ -22,9 +22,11 @@ public class DeleteVisitor implements Visitor
 		}
 		else
 		{
+			pDirectory.removeIFile(aQuery);
 			for(IFile file: pDirectory)
 			{
-				file.accept(this);
+					file.accept(this);
+				
 			}
 		}
 	}
@@ -37,13 +39,17 @@ public class DeleteVisitor implements Visitor
 		}
 		else
 		{
+			pSymLink.removeIFile(aQuery);
 			for(IFile file: pSymLink)
 			{
-				file.accept(this);
+				
+					file.accept(this);
+				
 			}
 		}
 		
 	}
+	
 	
 	
 
