@@ -1,4 +1,4 @@
-package Lab3ReviewMod5and6;
+package Corporation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
