@@ -23,6 +23,11 @@ public class SymLink extends AbstractFile
 		aFiles.add(pIFile);
 	}
 	
+	public void clear()
+	{
+		aFiles.clear();
+	}
+	
 	@Override
 	public void accept(Visitor pVisitor) {
 		pVisitor.visitSymLink(this);

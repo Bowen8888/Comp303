@@ -13,6 +13,8 @@ public class Driver {
 		rootDirectory.addIFile(file1);
 		rootDirectory.addIFile(subSymLink);
 		PrintVisitor v = new PrintVisitor();
+		DeleteVisitor dv = new DeleteVisitor("subSymLink");
+		rootDirectory.accept(dv);
 		rootDirectory.accept(v);
 
 	}

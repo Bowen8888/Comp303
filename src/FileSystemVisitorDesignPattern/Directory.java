@@ -17,6 +17,11 @@ public class Directory extends AbstractFile
 		aFiles.add(pIFile);
 	}
 
+	public void clear()
+	{
+		aFiles.clear();
+	}
+	
 	@Override
 	public Iterator<IFile> iterator() {
 		return aFiles.iterator();
