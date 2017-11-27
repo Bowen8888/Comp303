@@ -26,7 +26,7 @@ public class Driver
 		Committee space = new Committee("Space");
 		socs.add(space);
 		
-		SearchVisitor v = new SearchVisitor("Kemme");
+		SearchVisitor v = new SearchVisitor("Alice");
 		mcGill.accept(v);
 		System.out.println(v.getResult().name());
 		
