@@ -1,4 +1,4 @@
-package Synchronized;
+package Synchronization;
 
 /*
  * This is an example of a code without synchronization.
