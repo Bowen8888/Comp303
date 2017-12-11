@@ -1,36 +1,52 @@
-package Synchronization;
+package SynchronizationVsLock;
+
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /*
  * This is an example of a code without synchronization.
  */
 
-public class NormalAccount
+public class LockAccount
 {
+	private final Lock lock = new ReentrantLock();
+	private final Condition aBalanceAvailable = lock.newCondition();
 	private int aBalance;
 
-	public NormalAccount(int pBalance)
+	public LockAccount(int pBalance)
 	{
 		aBalance = pBalance;
 	}
 	
 	public void credit(int pAmount)
 	{ 
-			aBalance += pAmount; 
+		lock.lock();
+		aBalance += pAmount; 
+		lock.unlock();
 	}
 	
 	public void debit(int pAmount) 
 	{
-			aBalance -= pAmount; 
+		lock.lock();
+		aBalance -= pAmount; 
+		lock.unlock();
 	}
 	
 	public int getBalance() 
 	{
-		return aBalance;
+		lock.lock();
+		try{
+			return aBalance;
+		}
+		finally{
+			lock.unlock();
+		}
 	}
 	
 	
 	public static void main(String[] pArgs){
-		NormalAccount acc1 = new NormalAccount(1000);
+		LockAccount acc1 = new LockAccount(1000);
 		Thread t1 = new Thread(new Runnable(){
 
 			@Override
