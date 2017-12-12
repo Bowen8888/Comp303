@@ -9,10 +9,23 @@ import java.util.List;
 import FinalReview.Card.Rank;
 import FinalReview.Card.Suit;
 
-public class Hand implements Iterable<Card>, Comparable<Hand>
+public class Hand implements Iterable<Card>, Comparable<Hand>, Cloneable
 {
 	private List<Card> aCards = new ArrayList<>();
 	private final int aMax;
+	
+	public Hand clone(){
+		try {
+			Hand clone = (Hand) super.clone();
+			clone.aCards = new ArrayList<>();
+			for(Card card: aCards){
+				clone.aCards.add(card);
+			}
+			return clone;
+		} catch (CloneNotSupportedException e) {
+			return null;
+		}
+	}
 	
 	public Hand(int pMax){
 		assert pMax > 0;

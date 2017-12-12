@@ -44,6 +44,8 @@ public class HandDriver {
 		for(Hand hand : hands){
 			System.out.println(hand);
 		}
+		System.out.println(hand1 == hand1);
+		System.out.println(hand1 == hand1.clone());
 	}
 
 }
