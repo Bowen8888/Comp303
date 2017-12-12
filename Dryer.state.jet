@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_121" class="java.beans.XMLDecoder">
+ <object class="ca.mcgill.cs.stg.jetuml.diagrams.StateDiagramGraph">
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CircularStateNode" id="CircularStateNode0">
+    <void method="translate">
+     <int>140</int>
+     <int>270</int>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode0">
+    <void method="translate">
+     <int>330</int>
+     <int>150</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>Door Opened
+No Money</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode1">
+    <void method="translate">
+     <int>360</int>
+     <int>390</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>Door Closed
+No Money</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode2">
+    <void method="translate">
+     <int>770</int>
+     <int>190</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>Door Opened
+With Money</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode3">
+    <void method="translate">
+     <int>770</int>
+     <int>420</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>Door Closed
+With Money</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode4">
+    <void method="translate">
+     <int>560</int>
+     <int>270</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>Running</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CircularStateNode" id="CircularStateNode1">
+    <void method="translate">
+     <int>180</int>
+     <int>130</int>
+    </void>
+    <void property="final">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge"/>
+   <object idref="CircularStateNode0"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>put Money</string>
+    </void>
+   </object>
+   <object idref="StateNode0"/>
+   <object idref="StateNode2"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Close Door</string>
+    </void>
+   </object>
+   <object idref="StateNode2"/>
+   <object idref="StateNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Close Door</string>
+    </void>
+   </object>
+   <object idref="StateNode0"/>
+   <object idref="StateNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Open Door</string>
+    </void>
+   </object>
+   <object idref="StateNode1"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>put Money</string>
+    </void>
+   </object>
+   <object idref="StateNode1"/>
+   <object idref="StateNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Open Door</string>
+    </void>
+   </object>
+   <object idref="StateNode3"/>
+   <object idref="StateNode2"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>start</string>
+    </void>
+   </object>
+   <object idref="StateNode3"/>
+   <object idref="StateNode4"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Open Door</string>
+    </void>
+   </object>
+   <object idref="StateNode4"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Timeout</string>
+    </void>
+   </object>
+   <object idref="StateNode4"/>
+   <object idref="StateNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>start</string>
+    </void>
+   </object>
+   <object idref="StateNode0"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>start</string>
+    </void>
+   </object>
+   <object idref="StateNode2"/>
+   <object idref="StateNode2"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>start</string>
+    </void>
+   </object>
+   <object idref="StateNode3"/>
+   <object idref="StateNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>start</string>
+    </void>
+   </object>
+   <object idref="StateNode1"/>
+   <object idref="StateNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>start</string>
+    </void>
+   </object>
+   <object idref="StateNode4"/>
+   <object idref="StateNode4"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge"/>
+   <object idref="CircularStateNode0"/>
+   <object idref="StateNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge"/>
+   <object idref="StateNode0"/>
+   <object idref="CircularStateNode1"/>
+  </void>
+ </object>
+</java>
