@@ -11,6 +11,10 @@ public class Inventory implements Iterable<Item>
 {
 	private final String aName; // Unique
 	private final HashMap<Item, Integer> aInventory = new HashMap<>();
+
+	
+	
+	
 	
 	/**
 	 * Creates a new inventory with no items in it,
