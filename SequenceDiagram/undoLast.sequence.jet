@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_121" class="java.beans.XMLDecoder">
+ <object class="ca.mcgill.cs.stg.jetuml.diagrams.SequenceDiagramGraph">
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.ImplicitParameterNode" id="ImplicitParameterNode0">
+    <void method="translate">
+     <int>120</int>
+     <int>0</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>client:</string>
+     </void>
+    </void>
+    <void method="addChild">
+     <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CallNode" id="CallNode0">
+      <void method="translate">
+       <int>152</int>
+       <int>70</int>
+      </void>
+      <void property="parent">
+       <object idref="ImplicitParameterNode0"/>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.ImplicitParameterNode" id="ImplicitParameterNode1">
+    <void method="translate">
+     <int>340</int>
+     <int>0</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>:GameModel</string>
+     </void>
+    </void>
+    <void method="addChild">
+     <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CallNode" id="CallNode1">
+      <void method="translate">
+       <int>372</int>
+       <int>94</int>
+      </void>
+      <void property="parent">
+       <object idref="ImplicitParameterNode1"/>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.ImplicitParameterNode" id="ImplicitParameterNode2">
+    <void method="translate">
+     <int>570</int>
+     <int>0</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>aMoves:Stack&lt;Move&gt;</string>
+     </void>
+    </void>
+    <void method="addChild">
+     <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CallNode" id="CallNode2">
+      <void method="translate">
+       <int>632</int>
+       <int>118</int>
+      </void>
+      <void property="parent">
+       <object idref="ImplicitParameterNode2"/>
+      </void>
+     </object>
+    </void>
+    <void method="addChild">
+     <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CallNode" id="CallNode3">
+      <void method="translate">
+       <int>632</int>
+       <int>172</int>
+      </void>
+      <void property="parent">
+       <object idref="ImplicitParameterNode2"/>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.ImplicitParameterNode" id="ImplicitParameterNode3">
+    <void method="translate">
+     <int>810</int>
+     <int>0</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>move:Move</string>
+     </void>
+    </void>
+    <void method="addChild">
+     <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CallNode" id="CallNode4">
+      <void method="translate">
+       <int>842</int>
+       <int>226</int>
+      </void>
+      <void property="parent">
+       <object idref="ImplicitParameterNode3"/>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.CallEdge">
+    <void property="middleLabel">
+     <string>undoLast()</string>
+    </void>
+   </object>
+   <object idref="CallNode0"/>
+   <object idref="CallNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.CallEdge">
+    <void property="middleLabel">
+     <string>isEmpty()</string>
+    </void>
+   </object>
+   <object idref="CallNode1"/>
+   <object idref="CallNode2"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.ReturnEdge">
+    <void property="middleLabel">
+     <string>result</string>
+    </void>
+   </object>
+   <object idref="CallNode2"/>
+   <object idref="CallNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.CallEdge">
+    <void property="middleLabel">
+     <string>pop()</string>
+    </void>
+   </object>
+   <object idref="CallNode1"/>
+   <object idref="CallNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.ReturnEdge">
+    <void property="middleLabel">
+     <string>move</string>
+    </void>
+   </object>
+   <object idref="CallNode3"/>
+   <object idref="CallNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.CallEdge">
+    <void property="middleLabel">
+     <string>undo()</string>
+    </void>
+   </object>
+   <object idref="CallNode1"/>
+   <object idref="CallNode4"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.ReturnEdge"/>
+   <object idref="CallNode4"/>
+   <object idref="CallNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.ReturnEdge"/>
+   <object idref="CallNode1"/>
+   <object idref="CallNode0"/>
+  </void>
+ </object>
+</java>
