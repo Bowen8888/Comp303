@@ -34,14 +34,14 @@ public class SimpleProgram extends Application
 		Button innerButton = new Button("InnerButton");
 		Button button1 = new Button("On");
 		Button button2 = new Button("Off");
-		Button button3 = new Button("button3");
-		Button button4 = new Button("button4");
+		Button button3 = new Button("exit");
+		Button button4 = new Button("Disable All");
 		root1.add(button1, 0, 0);
 		root1.add(button2, 1, 0);
 		root2.add(button3, 2, 0);
 		root2.add(button4, 3, 0);
 
-		Button outerButton = new Button("OuterButton",innerButton);
+		Button outerButton = new Button("OutterButton",innerButton);
 		root.add(outerButton,0,0);
 		root.add(root1, 1, 0);
 		root.add(root2, 0, 1);
@@ -54,6 +54,16 @@ public class SimpleProgram extends Application
 			}
 			
 		});
+		
+		outerButton.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				System.out.println("OutterButton clicked.");
+			}
+			
+		});
+		
 		button2.setDisable(true);
 		button1.setOnAction(new EventHandler<ActionEvent>(){
 
@@ -79,7 +89,31 @@ public class SimpleProgram extends Application
 			
 		});
 		
+		button3.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				System.exit(0);
+			}
+			
+			
+		});
 		
+		
+		button4.setOnAction(new EventHandler<ActionEvent>(){
+
+			@Override
+			public void handle(ActionEvent event) {
+				button1.setDisable(true);
+				button2.setDisable(true);
+				button4.setDisable(true);
+				innerButton.setDisable(true);
+				outerButton.setDisable(true);
+				
+			}
+			
+			
+		});
 		pPrimaryStage.setScene(new Scene(root));
 		pPrimaryStage.setTitle("This is a Window.");
 		pPrimaryStage.setHeight(500);
