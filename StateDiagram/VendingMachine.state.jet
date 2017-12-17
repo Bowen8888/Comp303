@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_121" class="java.beans.XMLDecoder">
+ <object class="ca.mcgill.cs.stg.jetuml.diagrams.StateDiagramGraph">
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.CircularStateNode" id="CircularStateNode0">
+    <void method="translate">
+     <int>50</int>
+     <int>110</int>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode0">
+    <void method="translate">
+     <int>230</int>
+     <int>140</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>No Money
+No Selection</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode1">
+    <void method="translate">
+     <int>670</int>
+     <int>140</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>No Money
+With Selection</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode2">
+    <void method="translate">
+     <int>50</int>
+     <int>580</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>With Money
+No Selection</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.StateNode" id="StateNode3">
+    <void method="translate">
+     <int>630</int>
+     <int>640</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>With Money
+With Selection</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.nodes.NoteNode" id="NoteNode0">
+    <void method="translate">
+     <int>550</int>
+     <int>40</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>b for balance
+p for price
+R for reset</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge"/>
+   <object idref="CircularStateNode0"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>AddMoney</string>
+    </void>
+   </object>
+   <object idref="StateNode0"/>
+   <object idref="StateNode2"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Select</string>
+    </void>
+   </object>
+   <object idref="StateNode0"/>
+   <object idref="StateNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>select [b&lt;p]</string>
+    </void>
+   </object>
+   <object idref="StateNode2"/>
+   <object idref="StateNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>Select[b&gt;=p] | drop,change</string>
+    </void>
+   </object>
+   <object idref="StateNode2"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>addMoney</string>
+    </void>
+   </object>
+   <object idref="StateNode2"/>
+   <object idref="StateNode2"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>addMoney[b&lt;p]</string>
+    </void>
+   </object>
+   <object idref="StateNode3"/>
+   <object idref="StateNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>addMoney[b&gt;=p]|drop,change OR R</string>
+    </void>
+   </object>
+   <object idref="StateNode3"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>addMoney[b&lt;p]</string>
+    </void>
+   </object>
+   <object idref="StateNode1"/>
+   <object idref="StateNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>addMoney[b&gt;=p]|drop,change OR R</string>
+    </void>
+   </object>
+   <object idref="StateNode1"/>
+   <object idref="StateNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.stg.jetuml.graph.edges.StateTransitionEdge">
+    <void property="middleLabel">
+     <string>R</string>
+    </void>
+   </object>
+   <object idref="StateNode0"/>
+   <object idref="StateNode0"/>
+  </void>
+ </object>
+</java>
