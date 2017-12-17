@@ -1,5 +1,8 @@
 package Serialization;
 
+import java.beans.DefaultPersistenceDelegate;
+import java.beans.Encoder;
+import java.beans.Statement;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.BufferedInputStream;
@@ -7,7 +10,10 @@ import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Random;
+
+
 
 public class SerializationXML {
 	private static final int MAX_STOCK = 50;
@@ -35,24 +41,47 @@ public class SerializationXML {
 		iga.addInventory(inventory3);
 		
 		Corporation[] igas = new Corporation[1];
+		write(igas);
+		Corporation[] readProducts = read();
 		
-		Chanel chanel = new Chanel();
-		VideoClips v1 = new VideoClips("v1");
-		VideoClips v2 = new VideoClips("v2");
-		chanel.add(v1);
-		chanel.add(v2);
+		print(readProducts);
 		
-		XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(FILE_NAME)));
-		encoder.writeObject(chanel);
-		encoder.close();
-		
-		XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(FILE_NAME)));
-		Chanel chanel2 = (Chanel) decoder.readObject();
-		for(VideoClips v: chanel2){
-			System.out.println(v);
-		}
-		decoder.close();
 	}
 	
+	public static void print(Corporation[] corps){
+		for(Corporation corp: corps){
+			System.out.println(corp);
+		}
+	}
 	
+	private static void write(Corporation[] pProducts) throws IOException
+	{
+		try(XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(FILE_NAME))))
+		{
+			configureXMLEncoder(encoder);
+			encoder.writeObject(pProducts);
+		}
+	}
+	private static Corporation[] read() throws IOException
+	{
+		try(XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(FILE_NAME))))
+		{
+			return (Corporation[])decoder.readObject();
+		}
+	}
+	private static void configureXMLEncoder(XMLEncoder pEncoder)
+	{
+		pEncoder.setPersistenceDelegate(Corporation.class, new DefaultPersistenceDelegate()
+		{
+			protected void initialize(Class<?> pType, Object pOldInstance, Object pNewInstance, Encoder pOut) 
+			{
+				super.initialize(pType, pOldInstance, pNewInstance, pOut);
+				for(Iterator<String> namesIt = ((Corporation)pOldInstance).getInventoryNames(); namesIt.hasNext(); )
+				{
+					String inventory = namesIt.next();
+					pOut.writeStatement( new Statement(pOldInstance, "setInventory", new Object[]{ inventory, ((Corporation)pOldInstance).getInventory(inventory) }) );
+				}
+			}
+		});
+	}
 }

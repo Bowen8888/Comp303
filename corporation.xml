@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_121" class="java.beans.XMLDecoder">
- <object class="Serialization.Chanel"/>
+ <object class="Serialization.Chanel" id="Chanel0">
+  <void property="videos">
+   <void method="add">
+    <object class="Serialization.VideoClips">
+     <void property="name">
+      <string>v1</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Serialization.VideoClips">
+     <void property="name">
+      <string>v2</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
 </java>

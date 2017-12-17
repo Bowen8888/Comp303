@@ -11,15 +11,15 @@ public class Chanel implements Iterable<VideoClips>
 		
 	}
 	
-	public void add(VideoClips v){
+	public void addVideoClips(VideoClips v){
 		aVideos.add(v);
 	}
 
-	public void set(ArrayList<VideoClips> pVideos){
+	public void setVideos(ArrayList<VideoClips> pVideos){
 		aVideos = pVideos;
 	}
 	
-	public ArrayList<VideoClips> get(){
+	public ArrayList<VideoClips> getVideos(){
 		return aVideos;
 	}
 	
