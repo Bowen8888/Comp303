@@ -4,5 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="images"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/36969/Downloads/COMP303-F2017-scratchpad/lib/commons-csv-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/36969/Downloads/COMP303-F2017-scratchpad/lib/gson-2.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

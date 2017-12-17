@@ -25,7 +25,10 @@ public class SymLink implements IFile, Iterable<IFile>
 	@Override
 	public void accept(Visitor pVisitor) {
 		pVisitor.visitSymLink(this);
-		
+		for(IFile file: this){
+			file.accept(pVisitor);
+			
+		}
 	}
 	
 	public void addFile(IFile file){

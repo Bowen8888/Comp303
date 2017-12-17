@@ -17,7 +17,10 @@ public class Directory extends AbstractFile implements Iterable<IFile>
 	@Override
 	public void accept(Visitor pVisitor) {
 		pVisitor.visitDirectory(this);
-		
+		for(IFile file: this){
+			file.accept(pVisitor);
+			
+		}
 	}
 	
 	public void addFile(IFile file){
