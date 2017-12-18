@@ -1,4 +1,4 @@
-package BikerCourierCompany;
+package CourierCompany;
 
 public class AlgorithmAddHour extends AbstractAlgorithm
 {

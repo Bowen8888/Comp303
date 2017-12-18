@@ -1,4 +1,4 @@
-package BikerCourierCompany;
+package CourierCompany;
 
 public class Biker {
 	private String aName;

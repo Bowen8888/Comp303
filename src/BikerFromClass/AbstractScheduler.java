@@ -24,11 +24,13 @@ public abstract class AbstractScheduler
 	
 	public boolean checkIfAvailable()
 	{
-		return false;
+		return aObservers.isEmpty();
 	}
 	
 	public void notifyObservers(Biker pBiker, Location pLocation){
-		
+		for(SchedulerObserver observer: aObservers){
+			observer.scheduled(pBiker, pLocation);
+		}
 	}
 	
 	
@@ -37,9 +39,6 @@ public abstract class AbstractScheduler
 		aObservers.add(pObserver);
 	}
 	
-	protected Biker actualSchedule(Location pLocation)
-	{
-		return null;
-	}
+	protected abstract Biker actualSchedule(Location pLocation);
 	
 }

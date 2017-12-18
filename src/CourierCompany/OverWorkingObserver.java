@@ -1,4 +1,4 @@
-package BikerCourierCompany;
+package CourierCompany;
 
 public class OverWorkingObserver implements Observer
 {
