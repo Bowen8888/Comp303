@@ -11,6 +11,10 @@ import java.util.Map;
  */
 public class Corporation implements Iterable<Inventory>, Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String aName;
 	private Map<String, Inventory> aInventories = new HashMap<String, Inventory>();
 	
