@@ -83,5 +83,6 @@ public class Box
 		timer.start();
 		counter.start();
 		printer.start();
+		
 	}
 }

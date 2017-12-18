@@ -15,8 +15,11 @@ public class Overloader {
 		new Overloader().redirector(foo);
 		new Overloader().redirector(12);
 		
-		
 		new Overloader(null);
+		
+		double x = 100 ;
+		int y = (int) x;
+		System.out.println(new Overloader().doit(y));
 	}
 	
 	public void redirector(Object p){
